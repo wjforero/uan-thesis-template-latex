@@ -1,0 +1,30 @@
+\usepackage{etoolbox}
+\newcommand{\uantitlepage}[1]{%
+    \begin{titlepage}
+        \begin{center}
+            \ifblank{#1}{}{
+            \includegraphics[width=7cm]{images/uan.png}\\
+            }
+            \vspace*{1cm}
+
+            \Huge
+            \textbf{Thesis Title}
+    
+            \vspace{2cm}
+            
+            \large
+            \textbf{Nombres y apellidos completos del autor}\\
+            Código
+    
+            \vfill
+                
+            \vspace{0.8cm}
+                
+            \textbf{Universidad Antonio Nariño}\\
+            Programa Ingeniería de Sistemas y Computación\\
+            Facultad de Ingeniería de Sistemas\\
+            Bogotá, Colombia\\
+            2021
+        \end{center}
+    \end{titlepage}
+}
