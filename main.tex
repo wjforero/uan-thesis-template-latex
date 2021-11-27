@@ -1,0 +1,39 @@
+\documentclass[11pt,fleqn]{book}
+
+\input{settings.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% HEAD: Book-Begin
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\frontmatter
+\input{head/thesistitle.tex}
+{\let\cleardoublepage\relax\frontmatter}
+\input{head/thesisinfo.tex}
+{\let\cleardoublepage\relax\frontmatter}
+\setcounter{page}{0}
+
+\tableofcontents
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Lista de figuras}
+\listoffigures
+\phantomsection
+\addcontentsline{toc}{chapter}{Lista de tablas}
+\listoftables
+\setlength{\parskip}{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MAIN: The chapters of the thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+\input{chapters/chapter1.tex}
+\input{chapters/chapter1.tex}
+\input{chapters/chapter1.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TAIL: Bibliography, Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{tail/appendix}
+\backmatter
+%\input{tail/biblio}
+\end{document}
