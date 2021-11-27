@@ -11,12 +11,16 @@
 \input{head/thesisinfo.tex}
 {\let\cleardoublepage\relax\frontmatter}
 \setcounter{page}{0}
-
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\listfigurename}{Lista de figuras}
+\renewcommand{\listtablename}{Lista de tablas}
+\phantomsection
 \tableofcontents
-
+\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Lista de figuras}
 \listoffigures
+\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Lista de tablas}
 \listoftables
