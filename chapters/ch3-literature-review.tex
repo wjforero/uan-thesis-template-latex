@@ -20,9 +20,9 @@ La información seleccionada en el marco teórico permite tener un
 conocimiento profundo del tema en estudio y que le da significado a la
 investigación y/o desarrollo, de aquí se pueden generar nuevos conocimientos.
 Recuerde, de las teorías que apoyen su proyecto dependerá la validez interna
-y externa. 
+y externa.
 
-\section{Antecedentes o estado del arte}  
+\section{Antecedentes o estado del arte}
 
 Se revisan publicaciones recientes para ver si se encuentra algún proyecto
 hecho en otra parte o en otro momento que se parezca a la que se esta
@@ -30,5 +30,48 @@ desarrollando y así examinar sus resultados y forma de enfocarla, de manera
 que no se cometan los mismos errores, o simplemente aprovechar de ellos lo
 que le sirva y oriente en el desarrollo del proyecto.
 
-\section{Marco legal}  
+\section{Marco legal}
 \lipsum[1]
+
+\begin{table}[tb]
+    \caption{Tabla ejemplo}
+    \label{tab:ejemplo}
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        nombre & peso  & comida  \\
+        \midrule
+        ratón  & 10 g  & queso   \\
+        gato   & 1 kg  & ratones \\
+        perro  & 10 kg & gatos   \\
+        t-rex  & 10 Mg & perros  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Puede hacer referencia a la tabla \ref{tab:ejemplo}, a las figuras \ref{fig:ipsum} y a la figura \ref{fig:uan}.
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{uan.png}
+    \caption[A floating figure]{A floating figure (the lithograph \emph{Galleria di stampe}, of M.~Escher, got from \url{http://www.mcescher.com/}).}
+    \label{fig:uan}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+
+    \subfloat[Asia personas duo.]
+    {\includegraphics[width=.45\columnwidth]{uan.png}} \quad
+    \subfloat[Pan ma signo.]
+    {\label{fig:ipsum}%
+        \includegraphics[width=.45\columnwidth]{uan.png}} \\
+    \subfloat[Methodicamente o uno.]
+    {\includegraphics[width=.45\columnwidth]{uan.png}} \quad
+    \subfloat[Titulo debitas.]
+    {\includegraphics[width=.45\columnwidth]{uan}}
+    \caption[Tu duo titulo debitas latente]{Tu duo titulo debitas
+        latente.}
+    \label{fig:esempio}
+\end{figure}
+

@@ -1,6 +1,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,spanish]{babel}
+\selectlanguage{spanish}
 
 \usepackage{fourier}
 
@@ -17,8 +18,18 @@
 \usepackage{setspace} % increase interline spacing slightly
 \setstretch{1.3}
 
+\makeatletter
+\setlength{\@fptop}{0pt}  % for aligning all floating figures/tables etc... to the top margin
+\makeatother
+
 \usepackage{graphicx,xcolor}
 \graphicspath{{images/}}
+
+\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{microtype}
+\usepackage{url}
 
 \usepackage{fancyhdr}
 
@@ -33,6 +44,51 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancyhead[R]{\thepage}
 
+\definecolor{Black}{gray}{0.0}
+\definecolor{White}{gray}{0.9}
+\definecolor{codegreen}{HTML}{6A9955}
+\definecolor{codegray}{HTML}{d4d4d4}
+\definecolor{codeliteral}{HTML}{9CDCFE}
+\definecolor{backcolour}{HTML}{1e1e1e}
+\definecolor{codekeyword}{HTML}{569CD6}
+
+
+\usepackage{listings}
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstdefinelanguage{Kotlin}{
+  keywords={as, as?, break, class, continue, do, else, false, for, fun, if, in, !in, is !is, null, object, package, return, super, this, throw, treu, try, typealias, typeof, val, var, when, while},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstset{
+	float,
+	tabsize=2, 
+	basicstyle=\scriptsize\color{codegray}, 
+	showstringspaces=false, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	numbersep=10pt, 
+	breaklines=true, 
+	breakautoindent=true, 
+	breakindent=10pt, 
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{codekeyword},
+	stringstyle=\color{codeliteral},
+}
+
 
 
 \usepackage{hyperref}
@@ -42,8 +98,6 @@
 	citecolor=black,
 	urlcolor=black}
 
-\usepackage{lipsum}
-
 % *********** The APA citation style ***********
 \usepackage{csquotes} % needed for biblatex
 \usepackage[backend=biber,style=apa]{biblatex} % uses APA style
@@ -51,3 +105,4 @@
 
 \usepackage{glossaries}
 \makeglossaries
+
