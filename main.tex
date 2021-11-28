@@ -1,29 +1,38 @@
-\documentclass[12pt,fleqn]{book}
+\documentclass[letterpaper,12pt,openany]{book}
 
 \input{settings.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEAD: Book-Begin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\frontmatter
-\input{head/thesistitle.tex}
-{\let\cleardoublepage\relax\frontmatter}
-\input{head/thesisinfo.tex}
-{\let\cleardoublepage\relax\frontmatter}
-\setcounter{page}{0}
 \renewcommand{\contentsname}{Contenido}
 \renewcommand{\listfigurename}{Lista de figuras}
 \renewcommand{\listtablename}{Lista de tablas}
+\renewcommand\lstlistlistingname{Lista de algoritmos}
+
+
+\frontmatter
+% Portada
+\input{head/thesistitle.tex}
+{\let\cleardoublepage\relax\frontmatter}
+% Portada
+\input{head/thesisinfo.tex}
+\setcounter{page}{1}
+% Tabla de contenido
 \phantomsection
 \tableofcontents
-\cleardoublepage
+% Lista de figuras
 \phantomsection
 %\addcontentsline{toc}{chapter}{Lista de figuras}
 \listoffigures
-\cleardoublepage
+% Lista de tablas
 \phantomsection
 %\addcontentsline{toc}{chapter}{Lista de tablas}
 \listoftables
+% Lista de algoritmos
+\phantomsection
+%\addcontentsline{toc}{chapter}{Lista de algoritmos}
+\lstlistoflistings
 \setlength{\parskip}{1em}
 \input{head/abstracts}
 
