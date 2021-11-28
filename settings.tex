@@ -75,7 +75,7 @@
 \lstset{
 	float,
 	tabsize=2, 
-	basicstyle=\scriptsize\color{codegray}, 
+	basicstyle=\footnotesize\ttfamily\color{codegray}, 
 	showstringspaces=false, 
 	numbers=left, 
 	numberstyle=\tiny, 
@@ -106,3 +106,53 @@
 \usepackage{glossaries}
 \makeglossaries
 
+%%%%% CHAPTER HEADER %%%%
+\usepackage{color}
+\usepackage{tikz}
+\usepackage[explicit]{titlesec}
+\newcommand*\chapterlabel{}
+%\renewcommand{\thechapter}{\Roman{chapter}}
+\titleformat{\chapter}[display]  % type (section,chapter,etc...) to vary,  shape (eg display-type)
+	{\normalfont\bfseries\Huge} % format of the chapter
+	{\gdef\chapterlabel{\thechapter\ }}     % the label 
+ 	{0pt} % separation between label and chapter-title
+ 	  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-8cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=black] (0,0) rectangle(25.4mm,15mm);
+        \node[anchor=north east,yshift=-7.2cm,xshift=34mm,minimum height=30mm,inner sep=0mm] at (current page.north west)
+        {\parbox[top][30mm][t]{15mm}{\raggedleft $\phantom{\textrm{l}}$\color{white}\chapterlabel}};  %the black l is just to get better base-line alingement
+        \node[anchor=north west,yshift=-7.2cm,xshift=30mm,text width=\textwidth,minimum height=30mm,inner sep=0mm] at (current page.north west)
+              {\parbox[top][30mm][t]{\textwidth}{\color{black}#1}};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+   \gdef\chapterlabel{}
+  } % code before the title body
+
+\titlespacing*{\chapter}{0pt}{50pt}{30pt}
+\titlespacing*{\section}{0pt}{13.2pt}{*0}  % 13.2pt is line spacing for a text with 11pt font size
+\titlespacing*{\subsection}{0pt}{13.2pt}{*0}
+\titlespacing*{\subsubsection}{0pt}{13.2pt}{*0}
+
+\newcounter{myparts}
+\newcommand*\partlabel{}
+\titleformat{\part}[display]  % type (section,chapter,etc...) to vary,  shape (eg display-type)
+	{\normalfont\bfseries\Huge} % format of the part
+	{\gdef\partlabel{\thepart\ }}     % the label 
+ 	{0pt} % separation between label and part-title
+ 	  {\setlength{\unitlength}{20mm}
+	  \addtocounter{myparts}{1}
+	  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,xshift=-65mm,yshift=-6.9cm-\value{myparts}*20mm] at (current page.north east) % for unknown reasons: 3mm missing -> 65 instead of 62
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=black] (0,0) rectangle(62mm,20mm);   % -\value{myparts}\unitlength
+        \node[anchor=north west,yshift=-6.1cm-\value{myparts}*20mm,xshift=-60.5mm,minimum height=30mm,inner sep=0mm] at (current page.north east)
+        {\parbox[top][30mm][t]{55mm}{\raggedright \color{white}Part \partlabel $\phantom{\textrm{l}}$}};  %the phantom l is just to get better base-line alingement
+        \node[anchor=north east,yshift=-6.1cm-\value{myparts}*20mm,xshift=-63.5mm,text width=\textwidth,minimum height=30mm,inner sep=0mm] at (current page.north east)
+              {\parbox[top][30mm][t]{\textwidth}{\raggedleft \color{black}#1}};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+   \gdef\partlabel{}
+  } % code before the title body
