@@ -1,4 +1,4 @@
-# Latex template
+# LaTeX template
 
 You can use this template to format your thesis document using LaTeX. It folows the APA style with some customizations. It's based on the [Swiss Federal Institute of Technology in Lausanne (EPFL) PhD Thesis](https://www.overleaf.com/latex/templates/swiss-federal-institute-of-technology-in-lausanne-epfl-phd-thesis/dhcgtppybcwv) template available in Overleaf.
 
