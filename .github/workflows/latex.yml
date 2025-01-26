@@ -28,6 +28,8 @@ jobs:
       # Only run on main branch push (e.g. after pull request merge).
       if: github.event_name == 'push'
       run: |
+        git config --global user.name "${{ github.event.commits[0].author.name }}"
+        git config --global user.email "${{ github.event.commits[0].author.email }}"
         git commit -a -m "${{ github.event.commits[0].message }}"
         git push
     - name: Upload PDF
