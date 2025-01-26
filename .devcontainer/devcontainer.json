@@ -1,0 +1,11 @@
+{
+    "name": "LaTeX Build",
+    "dockerFile": "Dockerfile",
+    "runArgs": ["--privileged"],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+            ]
+        }
+    }
+}
