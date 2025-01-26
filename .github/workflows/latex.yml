@@ -20,6 +20,16 @@ jobs:
       continue-on-error: true
       run: |
         pdflatex -interaction=nonstopmode main.tex
+    - name: Generate final PDF
+      continue-on-error: true
+      run: |
+        pdflatex -interaction=nonstopmode main.tex
+    - name: Commit Build PDF
+      # Only run on main branch push (e.g. after pull request merge).
+      if: github.event_name == 'push'
+      run: |
+        git commit -a -m "${{ github.event.commits[0].message }}"
+        git push
     - name: Upload PDF
       uses: actions/upload-artifact@v4
       with:
